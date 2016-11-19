@@ -16,8 +16,42 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eMG-5R-PbB">
+                                <rect key="frame" x="208" y="50" width="99" height="30"/>
+                                <state key="normal" title="Swift Protobuf"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyr-cd-899">
+                                <rect key="frame" x="85.5" y="110" width="63" height="30"/>
+                                <state key="normal" title="Go JSON"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQd-a9-ZH1">
+                                <rect key="frame" x="215" y="110" width="84" height="30"/>
+                                <state key="normal" title="Go Protobuf"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kx4-te-am1">
+                                <rect key="frame" x="78.5" y="50" width="78" height="30"/>
+                                <state key="normal" title="Swift JSON"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tQd-a9-ZH1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="70" id="AfS-XN-mNp"/>
+                            <constraint firstItem="Kx4-te-am1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="BaP-ki-EOu"/>
+                            <constraint firstItem="Kx4-te-am1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-70" id="Muh-jn-ZGw"/>
+                            <constraint firstItem="lyr-cd-899" firstAttribute="top" secondItem="Kx4-te-am1" secondAttribute="bottom" constant="30" id="WKG-J9-RBf"/>
+                            <constraint firstItem="eMG-5R-PbB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="70" id="aHf-tM-b3T"/>
+                            <constraint firstItem="eMG-5R-PbB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="fLh-ed-jRN"/>
+                            <constraint firstItem="tQd-a9-ZH1" firstAttribute="top" secondItem="eMG-5R-PbB" secondAttribute="bottom" constant="30" id="h2e-d2-4BA"/>
+                            <constraint firstItem="lyr-cd-899" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-70" id="m77-N9-oXR"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="goJsonButton" destination="lyr-cd-899" id="Ivl-Qm-Bfl"/>
+                        <outlet property="goProtobufButton" destination="tQd-a9-ZH1" id="5vq-2Y-YHb"/>
+                        <outlet property="swiftJsonButton" destination="Kx4-te-am1" id="abg-jk-Q3k"/>
+                        <outlet property="swiftProtobufButton" destination="eMG-5R-PbB" id="pqP-Oa-rNP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
