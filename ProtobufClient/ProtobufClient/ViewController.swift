@@ -43,6 +43,9 @@ class ViewController: UIViewController {
                 .map {
                     String(bytes: $0, encoding: .utf8) as! T
                 }
+                .catchError { error in
+                    .just(error as! T)
+                }
         }
         
         func libraryOfData<T>(url: String) -> Observable<T> {
@@ -53,14 +56,15 @@ class ViewController: UIViewController {
                 .map {
                     try MyLibrary(protobuf: $0) as! T
                 }
+                .catchError { error in
+                    .just(error as! T)
+                }
         }
         
         let observer = PublishSubject<CustomDebugStringConvertible>()
         observer
             .subscribe(onNext: { data in
                 print(data)
-            }, onError: { error in
-                print(error)
             })
             .addDisposableTo(disposeBag)
         
