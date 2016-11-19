@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ProtobufClient" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -22,7 +26,7 @@
                                 <state key="normal" title="Swift Protobuf"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyr-cd-899">
-                                <rect key="frame" x="85.5" y="110" width="63" height="30"/>
+                                <rect key="frame" x="86" y="110" width="63" height="30"/>
                                 <state key="normal" title="Go JSON"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQd-a9-ZH1">
@@ -30,31 +34,124 @@
                                 <state key="normal" title="Go Protobuf"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kx4-te-am1">
-                                <rect key="frame" x="78.5" y="50" width="78" height="30"/>
+                                <rect key="frame" x="79" y="50" width="78" height="30"/>
                                 <state key="normal" title="Swift JSON"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHf-gW-pol">
+                                <rect key="frame" x="16" y="207" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="m1Q-Kp-GyY"/>
+                                    <constraint firstAttribute="height" constant="30" id="xXU-WM-yHD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Port" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ml5-k6-g6s">
+                                <rect key="frame" x="16" y="237" width="60" height="30"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bytes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7x4-lc-c9H">
+                                <rect key="frame" x="16" y="267" width="60" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GY0-VI-1TY">
+                                <rect key="frame" x="16" y="297" width="60" height="90"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="4RS-rg-O3F"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wkn-bK-fNv">
+                                <rect key="frame" x="76" y="207" width="283" height="30"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2G-7q-Qgm">
+                                <rect key="frame" x="76" y="237" width="283" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EL3-at-yZ4">
+                                <rect key="frame" x="76" y="267" width="283" height="30"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3g-AX-PCn">
+                                <rect key="frame" x="76" y="297" width="283" height="90"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ml5-k6-g6s" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="0BI-f8-qmu"/>
+                            <constraint firstItem="MHf-gW-pol" firstAttribute="top" secondItem="lyr-cd-899" secondAttribute="bottom" constant="67" id="0IM-nN-kMi"/>
+                            <constraint firstItem="Wkn-bK-fNv" firstAttribute="height" secondItem="MHf-gW-pol" secondAttribute="height" id="2IJ-JK-ytb"/>
+                            <constraint firstAttribute="trailing" secondItem="H3g-AX-PCn" secondAttribute="trailing" constant="16" id="4r9-mI-31K"/>
+                            <constraint firstItem="Wkn-bK-fNv" firstAttribute="top" secondItem="tQd-a9-ZH1" secondAttribute="bottom" constant="67" id="88s-2W-oaD"/>
+                            <constraint firstItem="MHf-gW-pol" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="9KF-I3-VGC"/>
                             <constraint firstItem="tQd-a9-ZH1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="70" id="AfS-XN-mNp"/>
+                            <constraint firstItem="GY0-VI-1TY" firstAttribute="top" secondItem="7x4-lc-c9H" secondAttribute="bottom" id="B2g-UG-3rE"/>
                             <constraint firstItem="Kx4-te-am1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="BaP-ki-EOu"/>
+                            <constraint firstItem="H3g-AX-PCn" firstAttribute="height" secondItem="GY0-VI-1TY" secondAttribute="height" id="CgH-0N-nch"/>
+                            <constraint firstItem="7x4-lc-c9H" firstAttribute="width" secondItem="MHf-gW-pol" secondAttribute="width" id="FcD-MQ-Cbb"/>
+                            <constraint firstItem="ml5-k6-g6s" firstAttribute="width" secondItem="MHf-gW-pol" secondAttribute="width" id="HvT-BU-AsL"/>
                             <constraint firstItem="Kx4-te-am1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-70" id="Muh-jn-ZGw"/>
+                            <constraint firstAttribute="trailing" secondItem="Wkn-bK-fNv" secondAttribute="trailing" constant="16" id="Qac-MT-e8Z"/>
+                            <constraint firstItem="H3g-AX-PCn" firstAttribute="top" secondItem="EL3-at-yZ4" secondAttribute="bottom" id="Qhp-dW-6PS"/>
+                            <constraint firstAttribute="trailing" secondItem="EL3-at-yZ4" secondAttribute="trailing" constant="16" id="R5B-5E-ZXg"/>
+                            <constraint firstItem="P2G-7q-Qgm" firstAttribute="leading" secondItem="ml5-k6-g6s" secondAttribute="trailing" id="RLg-Q6-IL5"/>
                             <constraint firstItem="lyr-cd-899" firstAttribute="top" secondItem="Kx4-te-am1" secondAttribute="bottom" constant="30" id="WKG-J9-RBf"/>
+                            <constraint firstItem="EL3-at-yZ4" firstAttribute="height" secondItem="MHf-gW-pol" secondAttribute="height" id="Xb7-qd-Xxg"/>
+                            <constraint firstItem="7x4-lc-c9H" firstAttribute="top" secondItem="ml5-k6-g6s" secondAttribute="bottom" id="a3s-6J-E2h"/>
                             <constraint firstItem="eMG-5R-PbB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="70" id="aHf-tM-b3T"/>
+                            <constraint firstItem="H3g-AX-PCn" firstAttribute="leading" secondItem="GY0-VI-1TY" secondAttribute="trailing" id="b56-MU-xDj"/>
+                            <constraint firstItem="7x4-lc-c9H" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="cFw-VK-sme"/>
+                            <constraint firstItem="Wkn-bK-fNv" firstAttribute="leading" secondItem="MHf-gW-pol" secondAttribute="trailing" id="dBr-Mt-zA5"/>
                             <constraint firstItem="eMG-5R-PbB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="fLh-ed-jRN"/>
+                            <constraint firstItem="P2G-7q-Qgm" firstAttribute="height" secondItem="MHf-gW-pol" secondAttribute="height" id="fvI-Xz-c8z"/>
                             <constraint firstItem="tQd-a9-ZH1" firstAttribute="top" secondItem="eMG-5R-PbB" secondAttribute="bottom" constant="30" id="h2e-d2-4BA"/>
+                            <constraint firstItem="EL3-at-yZ4" firstAttribute="top" secondItem="P2G-7q-Qgm" secondAttribute="bottom" id="l3U-J8-R32"/>
+                            <constraint firstAttribute="trailing" secondItem="P2G-7q-Qgm" secondAttribute="trailing" constant="16" id="lNH-vE-Dbh"/>
+                            <constraint firstItem="ml5-k6-g6s" firstAttribute="height" secondItem="MHf-gW-pol" secondAttribute="height" id="lj4-tR-lPe"/>
                             <constraint firstItem="lyr-cd-899" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-70" id="m77-N9-oXR"/>
+                            <constraint firstItem="P2G-7q-Qgm" firstAttribute="top" secondItem="Wkn-bK-fNv" secondAttribute="bottom" id="mO4-b1-Vlc"/>
+                            <constraint firstItem="EL3-at-yZ4" firstAttribute="leading" secondItem="7x4-lc-c9H" secondAttribute="trailing" id="tL9-XF-nUr"/>
+                            <constraint firstItem="GY0-VI-1TY" firstAttribute="width" secondItem="MHf-gW-pol" secondAttribute="width" id="vZ1-6M-aHB"/>
+                            <constraint firstItem="7x4-lc-c9H" firstAttribute="height" secondItem="MHf-gW-pol" secondAttribute="height" id="xKM-2l-q7P"/>
+                            <constraint firstItem="ml5-k6-g6s" firstAttribute="top" secondItem="MHf-gW-pol" secondAttribute="bottom" id="yz6-Th-Xza"/>
+                            <constraint firstItem="GY0-VI-1TY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="yzx-tw-YnE"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="byteLabel" destination="EL3-at-yZ4" id="jt8-7d-CLm"/>
+                        <outlet property="dataLabel" destination="H3g-AX-PCn" id="OKP-oB-gsg"/>
                         <outlet property="goJsonButton" destination="lyr-cd-899" id="Ivl-Qm-Bfl"/>
                         <outlet property="goProtobufButton" destination="tQd-a9-ZH1" id="5vq-2Y-YHb"/>
+                        <outlet property="portLabel" destination="P2G-7q-Qgm" id="WFg-mk-nDS"/>
                         <outlet property="swiftJsonButton" destination="Kx4-te-am1" id="abg-jk-Q3k"/>
                         <outlet property="swiftProtobufButton" destination="eMG-5R-PbB" id="pqP-Oa-rNP"/>
+                        <outlet property="typeLabel" destination="Wkn-bK-fNv" id="3wF-rm-cCL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>

@@ -17,25 +17,37 @@ class ViewController: UIViewController {
     @IBOutlet weak var goJsonButton: UIButton!
     @IBOutlet weak var goProtobufButton: UIButton!
     
+    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var portLabel: UILabel!
+    @IBOutlet weak var dataLabel: UILabel!
+    @IBOutlet weak var byteLabel: UILabel!
+    
     private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         func getRequest(url: String) -> URLRequest {
-            var request = URLRequest(url: URL(string: url)!)
+            let url = URL(string: url)!
+            
+            portLabel.text = "\(url.port!)"
+            
+            var request = URLRequest(url: url)
             request.httpMethod = "GET"
             return request
         }
         
         func data(request: URLRequest) -> Observable<Data> {
             return URLSession.shared.rx.data(request: request)
-                .do(onNext: { data in
-                    print(data)
+                .observeOn(MainScheduler.instance)
+                .do(onNext: { [unowned self] data in
+                    self.byteLabel.text = "\(data)"
                 })
         }
         
         func libraryOfJson<T>(url: String) -> Observable<T> {
+            typeLabel.text = "JSON"
+            
             var request = getRequest(url: url)
             request.setValue("application/json", forHTTPHeaderField: "Accept")
             
@@ -49,6 +61,8 @@ class ViewController: UIViewController {
         }
         
         func libraryOfData<T>(url: String) -> Observable<T> {
+            typeLabel.text = "Protobuf"
+            
             var request = getRequest(url: url)
             request.setValue("application/protobuf", forHTTPHeaderField: "Accept")
             
@@ -63,9 +77,8 @@ class ViewController: UIViewController {
         
         let observer = PublishSubject<CustomDebugStringConvertible>()
         observer
-            .subscribe(onNext: { data in
-                print(data)
-            })
+            .map { $0.debugDescription }
+            .bindTo(dataLabel.rx.text)
             .addDisposableTo(disposeBag)
         
         goJsonButton.rx.tap
