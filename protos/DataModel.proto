@@ -2,8 +2,8 @@ syntax = "proto3";
 
 message BookInfo {
    int64 id = 1;
-   string title = 3;
-   string author = 2;
+   string title = 2;
+   string author = 3;
 }
 
 message MyLibrary {
