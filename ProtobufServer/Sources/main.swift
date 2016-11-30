@@ -23,6 +23,24 @@ func getLibrary() -> MyLibrary {
     return library
 }
 
+router.get("/json") { request, response, next in
+    let library = getLibrary()
+    
+    response.headers["Content-Type"] = "application/json; charset=UTF-8"
+    response.send(try library.serializeJSON())
+    
+    next()
+}
+
+router.get("/protobuf") { request, response, next in
+    let library = getLibrary()
+    
+    response.headers["Content-Type"] = "application/protobuf"
+    response.send(data: try library.serializeProtobuf())
+    
+    next()
+}
+
 router.get("/") { request, response, next in
     let library = getLibrary()
     
