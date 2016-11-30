@@ -93,6 +93,34 @@ $ cd ./protos
 $ protoc --go_out=. DataModel.proto
 ```
 
+## Generating Docs
+
+Generate document using `protoc-gen-doc`
+
+```
+$ brew install qt5
+$ brew link --force qt5
+$ git clone https://github.com/estan/protoc-gen-doc.git
+$ cd protoc-gen-doc
+$ PROTOBUF_PREFIX=/usr/local/Cellar/protobuf/3.1.0 qmake
+$ make && make install
+```
+
+Have to match `protobuf` version with `PROTOBUF_PREFIX`
+
+#### Generate markdown
+
+```
+$ cd ./protos
+$ protoc --doc_out=markdown,../docs.md:. *.proto
+```
+
+#### Generate html
+
+```
+$ cd ./protos
+$ protoc --doc_out=html,../index.html:. *.proto
+```
 
 ## LICENSE
 
