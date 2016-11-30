@@ -5,7 +5,7 @@ import (
   "encoding/json"
   "fmt"
   "net/http"
-  pb "./protobuf"
+  pb "../protos"
 )
 
 func getLibrary() *pb.MyLibrary {
